@@ -2,6 +2,7 @@ package com.example.enozom.storesapp.stores;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 
 import com.example.enozom.storesapp.R;
 import com.example.enozom.storesapp.data.Store;
+import com.example.enozom.storesapp.utils.SimpleDividerItemDecorationUtils;
 
 import java.util.ArrayList;
 
@@ -65,6 +67,9 @@ public class StoresActivityFragment extends Fragment implements StoresContract.V
 
     @Override
     public void setStores(ArrayList<Store> stores) {
+        SimpleDividerItemDecorationUtils dividerItemDecoration = new SimpleDividerItemDecorationUtils(recyclerView.getContext());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new StoresAdapter(stores, getActivity());
         recyclerView.setAdapter(adapter);
