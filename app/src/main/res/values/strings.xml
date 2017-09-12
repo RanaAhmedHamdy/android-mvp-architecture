@@ -5,4 +5,6 @@
     <string name="description">Description</string>
     <string name="name">Name</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="check_connection">Check Your Internet Connection</string>
+    <string name="offline_message">You seem to be offline, do you want to enable internet connection now ?</string>
 </resources>

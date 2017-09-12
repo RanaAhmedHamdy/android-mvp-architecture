@@ -2,14 +2,12 @@ package com.example.enozom.storesapp.stores;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -57,7 +55,7 @@ public class StoresActivityFragment extends Fragment implements StoresContract.V
 
             public void onTextChanged(CharSequence s, int start,
                                       int before, int count) {
-                Log.d(TAG, searchBar.getText().toString());
+                //Log.d(TAG, searchBar.getText().toString());
                 presenter.filterStoresByName(searchBar.getText().toString());
             }
         });
@@ -78,7 +76,7 @@ public class StoresActivityFragment extends Fragment implements StoresContract.V
     @Override
     public void updateStores(ArrayList<Store> filteredStores) {
         adapter = new StoresAdapter(filteredStores, getActivity());
-        recyclerView.swapAdapter(adapter, false);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override

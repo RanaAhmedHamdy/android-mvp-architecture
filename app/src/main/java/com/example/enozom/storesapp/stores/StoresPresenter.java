@@ -36,7 +36,9 @@ public class StoresPresenter implements StoresContract.Presenter{
         ArrayList<Store> filteredStores = new ArrayList<>();
         if(allStores != null) {
             for (int i = 0; i < allStores.size(); i++) {
+                //SLog.d(TAG, allStores.get(i).getStoreName().toLowerCase());
                 if (allStores.get(i).getStoreName().toLowerCase().contains(text.toLowerCase())) {
+                    //Log.d(TAG + ":added: ", allStores.get(i).getStoreName());
                     filteredStores.add(allStores.get(i));
                 }
             }
