@@ -33,9 +33,9 @@ public class StoresActivity extends AppCompatActivity {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.add(R.id.fragment, storesActivityFragment);
             transaction.commit();
-
-            // Create the presenter
-            storesPresenter = new StoresPresenter(StoresRepository.getInstance(StoresRemoteDataSource.getInstance()), storesActivityFragment);
         }
+
+        // Create the presenter
+        storesPresenter = new StoresPresenter(StoresRepository.getInstance(StoresRemoteDataSource.getInstance()), storesActivityFragment);
     }
 }
