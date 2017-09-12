@@ -34,13 +34,14 @@ public class StoresPresenter implements StoresContract.Presenter{
     @Override
     public void filterStoresByName(String text) {
         ArrayList<Store> filteredStores = new ArrayList<>();
-
-        for(int i = 0; i < allStores.size(); i++) {
-            if(allStores.get(i).getStoreName().toLowerCase().contains(text.toLowerCase())) {
-                filteredStores.add(allStores.get(i));
+        if(allStores != null) {
+            for (int i = 0; i < allStores.size(); i++) {
+                if (allStores.get(i).getStoreName().toLowerCase().contains(text.toLowerCase())) {
+                    filteredStores.add(allStores.get(i));
+                }
             }
+            storesView.updateStores(filteredStores);
         }
-        storesView.updateStores(filteredStores);
     }
 
     @Override
