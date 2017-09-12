@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.example.enozom.storesapp.R;
 import com.example.enozom.storesapp.data.Store;
@@ -43,6 +44,7 @@ public class StoresActivityFragment extends Fragment implements StoresContract.V
 
         recyclerView = (RecyclerView) root.findViewById(R.id.stores_recycler_view);
         searchBar = (EditText) getActivity().findViewById(R.id.searchEditText);
+
         getData();
 
         searchBar.addTextChangedListener(new TextWatcher() {

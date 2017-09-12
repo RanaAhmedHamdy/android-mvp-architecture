@@ -13,10 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.enozom.storesapp.R;
 import com.example.enozom.storesapp.data.Store;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 public class StoresAdapter extends RecyclerView.Adapter<StoresAdapter.ViewHolder> {
@@ -61,6 +63,7 @@ public class StoresAdapter extends RecyclerView.Adapter<StoresAdapter.ViewHolder
         private TextView storeName;
         private TextView storeDescription;
         private ImageView storeImage;
+        private ProgressBar progressBar;
 
 
         public ViewHolder(View v) {
@@ -68,6 +71,7 @@ public class StoresAdapter extends RecyclerView.Adapter<StoresAdapter.ViewHolder
             storeName = (TextView) v.findViewById(R.id.store_name_tv);
             storeDescription = (TextView) v.findViewById(R.id.store_description_tv);
             storeImage = (ImageView) v.findViewById(R.id.store_imageview);
+            progressBar = (ProgressBar) v.findViewById(R.id.loading_image_progress_bar);
         }
 
         void bindViewOnItem(final int position) {
@@ -75,7 +79,18 @@ public class StoresAdapter extends RecyclerView.Adapter<StoresAdapter.ViewHolder
             storeName.setText(store.getStoreName());
             storeDescription.setText(store.getStoreDescription());
             //Log.d(TAG,"bindViewOnItem:imageUrl  "+store.getStoreLogo().replace("http","https"));
-            Picasso.with(context).load(store.getStoreLogo().replace("http","https")).into(storeImage);
+            progressBar.setVisibility(View.VISIBLE);
+            Picasso.with(context).load(store.getStoreLogo().replace("http","https")).into(storeImage, new Callback() {
+                @Override
+                public void onSuccess() {
+                    progressBar.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onError() {
+                }
+            })
+            ;
         }
     }
 }

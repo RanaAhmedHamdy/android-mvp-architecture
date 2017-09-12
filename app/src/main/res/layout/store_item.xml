@@ -6,14 +6,23 @@
     android:orientation="horizontal"
     android:padding="@dimen/store_layout_padding" >
 
-    <ImageView
-        android:adjustViewBounds="true"
-        android:id="@+id/store_imageview"
-        android:layout_width="@dimen/logo_size"
-        android:layout_height="@dimen/logo_size"
-        android:layout_marginRight="@dimen/logo_margin_right"
-        android:src="@mipmap/ic_launcher" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:adjustViewBounds="true"
+            android:id="@+id/store_imageview"
+            android:layout_width="@dimen/logo_size"
+            android:layout_height="@dimen/logo_size"
+            android:layout_marginRight="@dimen/logo_margin_right"
+            android:src="@mipmap/ic_launcher" />
 
+       <ProgressBar
+           android:visibility="gone"
+           android:id="@+id/loading_image_progress_bar"
+           android:layout_width="@dimen/logo_size"
+           android:layout_height="@dimen/logo_size" />
+    </RelativeLayout>
     <LinearLayout
         android:gravity="center"
         android:layout_gravity="center"
