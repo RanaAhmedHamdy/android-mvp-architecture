@@ -19,7 +19,7 @@ import java.util.TimerTask;
 public class SplashActivityFragment extends Fragment implements SplashContract.View{
 
     private SplashContract.Presenter presenter;
-    private final long SPLASH_DELAY = 2000; // msec
+    private final long SPLASH_DELAY = 3000; // msec
 
     public static SplashActivityFragment newInstance(){return new SplashActivityFragment();}
 

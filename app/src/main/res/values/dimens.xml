@@ -2,7 +2,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="store_layout_padding">6dp</dimen>
     <dimen name="logo_margin_right">6dp</dimen>
-    <dimen name="logo_size">100dp</dimen>
-    <dimen name="description_text_size">12sp</dimen>
-    <dimen name="name_txt_size">16dp</dimen>
+    <dimen name="logo_size">120dp</dimen>
+    <dimen name="description_text_size">16sp</dimen>
+    <dimen name="name_txt_size">18dp</dimen>
 </resources>

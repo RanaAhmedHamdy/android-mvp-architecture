@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@android:color/white"
     tools:context="com.example.enozom.storesapp.splash.SplashActivityFragment"
     tools:showIn="@layout/activity_splash">
 
 
     <ImageView
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/enozom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

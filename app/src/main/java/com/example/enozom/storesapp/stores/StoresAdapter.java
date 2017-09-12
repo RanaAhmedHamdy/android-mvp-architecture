@@ -74,7 +74,7 @@ public class StoresAdapter extends RecyclerView.Adapter<StoresAdapter.ViewHolder
             Store store = stores.get(position);
             storeName.setText(store.getStoreName());
             storeDescription.setText(store.getStoreDescription());
-            Log.d(TAG,"bindViewOnItem:imageUrl  "+store.getStoreLogo().replace("http","https"));
+            //Log.d(TAG,"bindViewOnItem:imageUrl  "+store.getStoreLogo().replace("http","https"));
             Picasso.with(context).load(store.getStoreLogo().replace("http","https")).into(storeImage);
         }
     }
